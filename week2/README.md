@@ -1,6 +1,4 @@
-# Week 1: 
-
-In this week, we will learn very minimum basic knowledge in order to get to select the right features for building simple machine learning model which will be a classification problem.
+# Week 2: 
 
 ## What will I learn?
 
