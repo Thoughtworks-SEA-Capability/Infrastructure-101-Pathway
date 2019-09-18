@@ -1,6 +1,6 @@
 # Introduction
 
-## Essential Infrastructure Developer Pathway
+## Infrastructure 101  Pathway
 
 > **Learning**
 >
