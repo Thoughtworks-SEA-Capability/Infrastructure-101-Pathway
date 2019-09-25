@@ -2,32 +2,28 @@
 
 ## What will I learn?
 - Cloud Computing
+- Amazon Web Services (AWS) basics
 - Infrastructure as Code (IaC)
-- Terraform
+- Terraform basics
 
 ## What should I learn on weekend?
-The idea for this weekend is that you understand the basics of cloud computing and especially Amazon Web Services (AWS). The resources will provide you with the 
+The idea for this weekend is that you understand the basics of cloud computing and especially Amazon Web Services (AWS). The resources will provide you with an overview of what cloud computing is about, its different models, its advantages etc. They will also give an introduction to AWS that briefly covers each of the most popular services like
+**Compute**: EC2, Lambda, ELB, Autoscalling, ECR, ECS
+**Stoarge**: S3, Glacier, EFS, AWS Storage Gateway
+**Database**: RDS, DynamoDB, Redshift, ElastiCache
+**Security**: IAM, KMS, Security Groups
+**Management**: Cloudformation, OpsWorks, CloudTrail, Cloudwatch
+**Application Interaction**: SNS, SQS
 
-
-EC2, Lambda, ELB, Autoscalling, ECR, ECS
-Signing up to AWS
-AWS Console
-Security Group
-
-Introduction to cloud computing
-Cloud computing example
-Cloud computing advantages
-Cloud products
-Cloud computing models
-
-Introduction to AWS
-Service domain in aws
-Demo on how to launch aws computing instance
+You will learn how to sign up to AWS, use the AWS Console, launch an ec2 instance, generate a key pair and ssh into and that instance.
 Hands on demo on migrating an application from local computer to aws
 
+A terraform tutorial will introduce you to the basic concepts of Terraform and show you how to build infrastructure, change infrastructure, destroy infrastructure, how to use resource dependencies, provision, input Variables, output variables, modules and remote state storage.
 
-[AWS Tutorial For Beginners | AWS Training ](https://www.youtube.com/watch?v=MmsoIcYrXJU)
 
+[AWS Tutorial For Beginners | AWS Training (2,5 hours)](https://www.youtube.com/watch?v=MmsoIcYrXJU)
+
+[Getting started with Terraform on AWS (2 hours)](https://learn.hashicorp.com/terraform/getting-started/install)
 
 ## What will we do in Guild?
 
@@ -47,6 +43,11 @@ Simple pipeline to deploy app (keep infra pipelines in view later)
 
 ## What if I want to know more!?
 
+[Using Pipelines to Manage Environments with Infrastructure as Code	Kief Morris Insights (10 minutes reading)](https://www.thoughtworks.com/de/insights/blog/using-pipelines-manage-environments-infrastructure-code-0)
+[A complete AWS environment with Terraform	sets up a complete aws env with TF; is tutorial, has video to follow along (10 minutes tutorial)](https://linuxacademy.com/guide/13922-a-complete-aws-environment-with-terraform/)
+[Infrastructure as Code: Managing Servers in the Cloud by Kiefs book](https://www.amazon.com/Infrastructure-Code-Managing-Servers-Cloud/dp/1491924357)
+[Terraform: Up and Running: Writing Infrastructure as Code](https://www.amazon.com/Terraform-Running-Writing-Infrastructure-Code-ebook/dp/B06XKHGJHP)
+[Terraform Best Practices](https://www.terraform-best-practices.com)
 
 ---
 
