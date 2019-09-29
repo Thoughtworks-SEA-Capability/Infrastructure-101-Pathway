@@ -8,7 +8,7 @@ Linux concepts:
 - port forwarding
 - the filesystem
 - users, groups and permissions
-- process management and systemd
+- (extra) process management and systemd
 
 Technologies covered:
 
@@ -16,7 +16,7 @@ Technologies covered:
 - Ansible for more complex configuration management and app deployment
 - Packer for automating the creation of machine images
 
-## What should I learn on weekend?
+## What should I learn during the weekend?
 
 
 ## What will we do in Guild?
@@ -35,8 +35,8 @@ Technologies covered:
 ### Rough steps:
   - How do we spin up a basic VM using vagrant? How do we copy the jar file in?
   - What dependencies are required to run the jar? How do we install them?
-  - What user is running the jar? How do we make it more secure?
   - How do we automate that installation via shell scripts?
+  - What user is running the jar? How do we make it more secure?
   - How can we configure our app to ....
   - How can we automatically apply that configuration in a reproducible way using Ansible?
   - How can we package the resulting VM image for reuse using Packer?
