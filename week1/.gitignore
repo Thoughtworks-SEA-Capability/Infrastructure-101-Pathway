@@ -1,0 +1,4 @@
+.vagrant
+
+# vagrant box log files
+*-console.log
