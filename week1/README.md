@@ -26,8 +26,14 @@ Technologies covered:
 - Jar is a simple SpringBoot Hello World web app: https://spring.io/guides/gs/spring-boot/#scratch
 - Desired configuration:
 
-- Rough steps:
-  - How do we spin up a basic VM using vagrant?
+### Pre-requisites
+- Install Virtualbox
+- Install Vagrant
+- Install Ansible
+- Install Packer
+
+### Rough steps:
+  - How do we spin up a basic VM using vagrant? How do we copy the jar file in?
   - What dependencies are required to run the jar? How do we install them?
   - What user is running the jar? How do we make it more secure?
   - How do we automate that installation via shell scripts?
