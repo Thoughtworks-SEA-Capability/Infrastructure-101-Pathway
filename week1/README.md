@@ -19,7 +19,7 @@ Technologies covered:
 ## What should I learn during the weekend?
 - Linux:
   - [UNIX Tutorial for Beginners](http://www.ee.surrey.ac.uk/Teaching/Unix/) (Tutorial One to Six, ~ 60 minutes)
-  - [UNIX and Linux System Administration Handbook: 2.6 System Management Daemons and 2.7 systemd in detail] (https://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0134277554) OR
+  - [UNIX and Linux System Administration Handbook: 2.6 System Management Daemons and 2.7 systemd in detail](https://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0134277554) OR
   - [Intro to Systemd](https://thepracticalsysadmin.com/intro-to-systemd/) (~30min)
 - Virtual Machines and Vagrant
   - [What is Immutable Infrastructure?](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure) (~10min)
