@@ -40,7 +40,7 @@ Description=Run Hello World Spring Boot app
 [Service]
 WorkingDirectory=/home/vagrant
 ExecStart=/usr/bin/java -Xms128m -Xmx256m -jar hello-spring-boot-0.1.0.jar
-User=app
+User=appuser
 Type=simple
 Restart=on-failure
 RestartSec=10

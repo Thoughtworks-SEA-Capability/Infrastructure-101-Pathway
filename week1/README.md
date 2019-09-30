@@ -27,15 +27,18 @@ Technologies covered:
   - [Vagrant Intro](https://www.vagrantup.com/intro/index.html) (~45min)
 - Ansible
   - [Docs](https://docs.ansible.com/) (Instalation, Getting Started, and Playbooks, ~120min)
-- Packer
+- (extra) Packer
   - [Intro](https://www.packer.io/intro/index.html) (~30min)
 
 ## What will we do in Guild?
 
-**End Goal**: Automatically run the given `hello-spring-boot-0.1.0.jar` jar file on a local VM, with the desired configuration, and package that VM image into an AMI
+**End Goal**:
+- Automatically run the given `hello-spring-boot-0.1.0.jar` jar file on a local VM, with the desired configuration
+- (Extra) Package that VM image into an AMI
 
+**Notes**:
 - Jar is a simple SpringBoot Hello World web app: https://spring.io/guides/gs/spring-boot/#scratch
-- Desired configuration:
+- Jar should be run with your desired configuration in `test.application.properties`
 
 ### Pre-requisites
 - Know some java and springboot basics (ie. how to run an configure and jar file)
