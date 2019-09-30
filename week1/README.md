@@ -14,10 +14,21 @@ Technologies covered:
 
 - Vagrant for managing virtualization configuration, allowing you to easily configure and spin up VMs locally
 - Ansible for more complex configuration management and app deployment
-- Packer for automating the creation of machine images
+- (extra) Packer for automating the creation of machine images
 
 ## What should I learn during the weekend?
-
+- Linux:
+  - [UNIX Tutorial for Beginners](http://www.ee.surrey.ac.uk/Teaching/Unix/) (Tutorial One to Six, ~ 60 minutes)
+  - [UNIX and Linux System Administration Handbook: 2.6 System Management Daemons and 2.7 systemd in detail] (https://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0134277554) OR
+  - [Intro to Systemd](https://thepracticalsysadmin.com/intro-to-systemd/) (~30min)
+- Virtual Machines and Vagrant
+  - [What is Immutable Infrastructure?](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure) (~10min)
+  - [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) (~10min)
+  - [Vagrant Intro](https://www.vagrantup.com/intro/index.html) (~45min)
+- Ansible
+  - [Docs](https://docs.ansible.com/) (Instalation, Getting Started, and Playbooks, ~120min)
+- Packer
+  - [Intro](https://www.packer.io/intro/index.html) (~30min)
 
 ## What will we do in Guild?
 
@@ -27,10 +38,11 @@ Technologies covered:
 - Desired configuration:
 
 ### Pre-requisites
+- Know some java and springboot basics (ie. how to run an configure and jar file)
 - Install Virtualbox
 - Install Vagrant
 - Install Ansible
-- Install Packer
+- (extra) Install Packer
 
 ### Rough steps:
   - How do we spin up a basic VM using vagrant? How do we copy the jar file in?
@@ -40,9 +52,12 @@ Technologies covered:
   - How can we run our app as a service? What are the benefits?
   - How can we apply configuration to our app?
   - How can we automatically apply that configuration in a reproducible way using Ansible?
-  - How can we package the resulting VM image for reuse using Packer?
+  - How can we automatically deliver configuration changes and ensure the app picks them up?
+  - (extra) How can we package the resulting VM image for reuse using Packer?
 
 ## What if I want to know more!?
+- More commandline tricks: [http://conqueringthecommandline.com/book](http://conqueringthecommandline.com/book)
+
 
 ---
 

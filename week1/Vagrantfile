@@ -29,6 +29,28 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     apt-get install -y openjdk-11-jre-headless
-    java -jar hello-spring-boot-0.1.0.jar
+
+    groupadd -r app
+    useradd -r -s /bin/false -g app appuser
+
+    cat <<EOF > /etc/systemd/system/hello-spring.service
+[Unit]
+Description=Run Hello World Spring Boot app
+
+[Service]
+WorkingDirectory=/home/vagrant
+ExecStart=/usr/bin/java -Xms128m -Xmx256m -jar hello-spring-boot-0.1.0.jar
+User=app
+Type=simple
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+    systemctl daemon-reload
+    systemctl start hello-spring.service
+    systemctl status hello-spring
   SHELL
 end
