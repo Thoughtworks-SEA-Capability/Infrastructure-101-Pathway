@@ -34,6 +34,9 @@ SHELL
 
 Note: the shell provisioner runs as root, so the above means that the java process is running as root, which is insecure
 
+### Configuration for the Spring app
+- http://dolszewski.com/spring/spring-boot-application-properties-file/
+
 ### (EXTRA) Run the jar file as a service
 - https://computingforgeeks.com/how-to-run-java-jar-application-with-systemd-on-linux/
 - https://fabianlee.org/2018/04/15/java-spring-boot-application-as-a-service-using-systemd-on-ubuntu-16-04/
