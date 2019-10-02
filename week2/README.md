@@ -20,26 +20,16 @@ Hands on demo on migrating an application from local computer to aws
 
 A terraform tutorial will introduce you to the basic concepts of Terraform and show you how to build infrastructure, change infrastructure, destroy infrastructure, how to use resource dependencies, provision, input Variables, output variables, modules and remote state storage.
 
-
 [AWS Tutorial For Beginners | AWS Training (2,5 hours)](https://www.youtube.com/watch?v=MmsoIcYrXJU)
 
 [Getting started with Terraform on AWS (2 hours)](https://learn.hashicorp.com/terraform/getting-started/install)
 
 ## What will we do in Guild?
 
+In this guild session we will deploy our app from last time on AWS.
+We will start by "manually" creating our infrastructure like EC2 instance, and security groups that we need for this by using the AWS console web UI.
 
-Provision app on VM on the cloud
-AWS console 
-Manually clicking around to deploy the given AMI (built with Packer) on a single EC2 instance
-
-Key pairs, security groups etc.
-
-Terraform
-
-Codifying the provisioning of the single EC2 instance, security groups
-Simple pipeline to deploy app (keep infra pipelines in view later)
-
-
+After we have worked through the process on the AWS console we will then _codify_ our configuration as Infrastructure as code by using Terraform. 
 
 ## What if I want to know more!?
 
