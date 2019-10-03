@@ -21,6 +21,7 @@ Hands on demo on migrating an application from local computer to aws
 A terraform tutorial will introduce you to the basic concepts of Terraform and show you how to build infrastructure, change infrastructure, destroy infrastructure, how to use resource dependencies, provision, input Variables, output variables, modules and remote state storage.
 
 [AWS Tutorial For Beginners | AWS Training (2,5 hours)](https://www.youtube.com/watch?v=MmsoIcYrXJU)
+(Pro tip: you can increase the playback speed of the video) 
 
 [Getting started with Terraform on AWS (2 hours)](https://learn.hashicorp.com/terraform/getting-started/install)
 
