@@ -8,15 +8,15 @@
 
 ## What should I learn on weekend?
 The idea for this weekend is that you understand the basics of cloud computing and especially Amazon Web Services (AWS). The resources will provide you with an overview of what cloud computing is about, its different models, its advantages etc. They will also give an introduction to AWS that briefly covers each of the most popular services like
-- **Compute**: EC2, Lambda, ELB, Autoscalling, ECR, ECS
-- **Stoarge**: S3, Glacier, EFS, AWS Storage Gateway
+- **Compute**: EC2, Lambda, ELB, Autoscaling, ECR, ECS
+- **Storage**: S3, Glacier, EFS, AWS Storage Gateway
 - **Database**: RDS, DynamoDB, Redshift, ElastiCache
 - **Security**: IAM, KMS, Security Groups
 - **Management**: Cloudformation, OpsWorks, CloudTrail, Cloudwatch
 - **Application** Interaction: SNS, SQS
 
 You will learn how to sign up to AWS, use the AWS Console, launch an ec2 instance, generate a key pair and ssh into and that instance.
-Hands on demo on migrating an application from local computer to aws
+Hands on demo on migrating an application from local computer to AWS.
 
 A terraform tutorial will introduce you to the basic concepts of Terraform and show you how to build infrastructure, change infrastructure, destroy infrastructure, how to use resource dependencies, provision, input Variables, output variables, modules and remote state storage.
 
@@ -31,6 +31,8 @@ In this guild session we will deploy our app from last time on AWS.
 We will start by "manually" creating our infrastructure like EC2 instance, and security groups that we need for this by using the AWS console web UI.
 
 After we have worked through the process on the AWS console we will then _codify_ our configuration as Infrastructure as code by using Terraform. 
+
+At the end of this guild we will have written Terraform scripts to automatically provision the infrastructure necessary to run service on AWS.
 
 ## What if I want to know more!?
 
