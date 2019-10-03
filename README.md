@@ -27,14 +27,14 @@ Each week we are going to ask you to do some homework beforehand (Maximum 2-4 hr
 
 Below is the high level timeline for each week.
 
-* Week 1:  Linux concepts and learn about virtual machines (VMs) and immutable infrastructure.
+* Week 1: Linux concepts and learn about virtual machines (VMs) and immutable infrastructure.
 * Week 2: Cloud Computing, AWS basics, IaC basics
 * Week 3: AWS deep(er) dive, Networking
 * Week 4: Containerisation and Docker
-* Week 5 : Container Orchestration and Kubernetes
-* Week 6 : Helm
-* Week 7 : CD Pipelines, GoCD
-* Week 8 : 
+* Week 5: Container Orchestration and Kubernetes
+* Week 6: Helm
+* Week 7: CD Pipelines, GoCD
+* Week 8: 
 
 ---
 
