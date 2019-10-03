@@ -26,7 +26,7 @@ Technologies covered:
   - [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) (~10min)
   - [Vagrant Intro](https://www.vagrantup.com/intro/index.html) (~45min)
 - Ansible
-  - [Docs](https://docs.ansible.com/) (Instalation, Getting Started, and Playbooks, ~120min)
+  - [Docs](https://docs.ansible.com/) (Installation, Getting Started, and Playbooks, ~120min)
 - (extra) Packer
   - [Intro](https://www.packer.io/intro/index.html) (~30min)
 
