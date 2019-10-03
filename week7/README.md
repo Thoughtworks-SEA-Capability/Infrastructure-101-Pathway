@@ -1,4 +1,4 @@
-# Week 7: 
+# Week 7: CD, GO CD
 
 
 ## What will I learn?

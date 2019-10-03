@@ -1,4 +1,4 @@
-# Week 4: 
+# Week 4: Containerisation
 We have talked about deploying your program to AWS in the past two weeks. We have also used the capabilities of the cloud in scaling your application and the basic concepts associated with cloud providers. 
 
 This week, we will talk about containerization to ensure our applications run across platforms, e.g. your IDE and the cloud reliably and consistently. We will also learn how to best utilize available infrastructure resources.

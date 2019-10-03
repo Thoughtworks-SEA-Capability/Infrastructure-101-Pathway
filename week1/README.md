@@ -1,4 +1,4 @@
-# Week 1:
+# Week 1: Linux, VMs
 
 ## What will I learn?
 We'll cover some Linux concepts and learn about virtual machines (VMs) and immutable infrastructure.

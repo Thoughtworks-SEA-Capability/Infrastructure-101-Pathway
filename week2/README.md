@@ -1,4 +1,4 @@
-# Week 2: 
+# Week 2: Cloud, AWS, IaC
 
 ## What will I learn?
 - Cloud Computing

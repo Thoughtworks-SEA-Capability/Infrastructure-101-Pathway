@@ -1,4 +1,4 @@
-# Week 6: 
+# Week 6: Helm
 
 
 ## What will I learn?
