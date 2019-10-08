@@ -1,4 +1,4 @@
-# Week 3: AWS, Nextworking
+# Week 3: AWS, Networking
 
 
 ## What will I learn?
