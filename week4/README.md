@@ -22,8 +22,8 @@ This week, we will talk about containerization to ensure our applications run ac
 
 ## What will we do in Guild?
 **End Goal**:
-1. Write Dockerfiles to containerize our application jar with different java version or runtime.
-2. Modify our setup to build and push docker images versus deploying jar directly on AWS
+- Write Dockerfiles to containerize our application jar with different java version or runtime.
+- Modify our setup to build and push docker images versus deploying jar directly on AWS
 
 **Pre-requisites**:
 - Install Docker
