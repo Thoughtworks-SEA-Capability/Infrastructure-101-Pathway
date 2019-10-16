@@ -2,7 +2,20 @@
 
 
 ## What will I learn?
+- Cloud first networking concepts: 
+How does user traffic reach my application
+    - VPCs
+    - Subnets, RouteTables 
+    - InternetGateway, Nats
 
+- High Availability and Scaling: 
+How do I keep my application reachable during high load and disaster
+    - Availability Zones
+    - LoadBalancers
+    - Autoscaling Groups
+
+- Implementing a two-tiered AWS Cloud Architecture 
+for my application with HA and  
 
 ## What should I learn on weekend?
 
