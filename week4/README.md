@@ -1,15 +1,15 @@
 # Week 4: Containerisation
 We have talked about deploying your program to AWS in the past two weeks. We have also used the capabilities of the cloud in scaling your application and discussed the basic concepts associated with cloud providers. 
 
-This week, we will talk about containerization to ensure our applications run across platforms, e.g. your IDE and the cloud, reliably and consistently. We will also learn how to best utilize available infrastructure resources.
+This week, we will talk about containerisation to ensure our applications run across platforms, e.g. your IDE and the cloud, reliably and consistently. We will also learn how to best utilize available infrastructure resources.
 
 ## What will I learn?
-1. Introduction to Containerization
+1. Introduction to containerisation
    * History of containers
-   * Why Containerization:
-   * Dependency isolation 
-   * Portability
-   * Efficient resource utilization
+   * Why containerisation?
+     * Dependency isolation 
+     * Portability
+     * Efficient resource utilization
 2. Introduction to Docker
    * Defining your container using Dockerfile
    * Building and publishing docker images
@@ -33,11 +33,13 @@ This week, we will talk about containerization to ensure our applications run ac
 - How do we copy over my compiled jar into the docker container?
 - What should be the first command the container should run on startup?
 - How do we expose my app running inside the docker container and access the app on my browser?
-- How do we modify our vagrant configuration to use the docker image instead of the jar file?
-- What if we want to use a different version of Java? Do we need to reinstall the JDK on our EC2 instance?
+- How do we view our application logs?
+- How do we publish this docker image to a registry so that it is available for use by the EC2 instance?
+- Given our app is containerized, what if we want to use a different version of Java? What can we do?
+- Let us extend our drawing and trace the route from the Load Balancer we deployed last week to our docker container.
 
 ## What if I want to know more!?
-1. Deep Dive into Docker: [The Docker Book](https://www.amazon.com/Docker-Book-Containerization-new-virtualization-ebook/dp/B00LRROTI4) - written step-by-step for system administrators, operations staff on
+1. Deep Dive into Docker: [The Docker Book](https://www.amazon.com/Docker-Book-containerisation-new-virtualization-ebook/dp/B00LRROTI4) - written step-by-step for system administrators, operations staff on
 2. [Docker Training](https://success.docker.com/training/) - compilation of self-paced and instructor-led courses offered by Docker
 3. [Creating a Simple Docker Base Image](https://docs.docker.com/develop/develop-images/baseimages/)
 4. [10+ Top Open-Source Tools for Docker Security](https://techbeacon.com/security/10-top-open-source-tools-docker-security)
