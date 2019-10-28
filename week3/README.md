@@ -19,6 +19,7 @@ for my application with HA and
 
 ## What should I learn on weekend?  
 - AWS Networking 101: Relevant Section 0~12min. [Aws Network Fundamentals, Watch me upto minute 12](https://www.youtube.com/watch?v=hiKPPy584Mg)
+- Creating most of the above on AWS Console: [Youtube link](https://www.youtube.com/watch?v=tD9vDv0uyI8)
 - VPCs and Subnets: 
     - https://docs.aws.amazon.com/en_pv/vpc/latest/userguide/VPC_Subnets.html
 - Route Tables: 
