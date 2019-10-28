@@ -18,7 +18,7 @@ How do I keep my application reachable during high load and disaster
 for my application with HA and  
 
 ## What should I learn on weekend?  
-- AWS Networking 101: Relevant Section 0~12min. [Youtube Link, Watch me upto minute 12](https://www.youtube.com/watch?v=hiKPPy584Mg)
+- AWS Networking 101: Relevant Section 0~12min. [Aws Network Fundamentals, Watch me upto minute 12](https://www.youtube.com/watch?v=hiKPPy584Mg)
 - VPCs and Subnets: 
     - https://docs.aws.amazon.com/en_pv/vpc/latest/userguide/VPC_Subnets.html
 - Route Tables: 
@@ -44,7 +44,8 @@ Reference: https://github.com/terraform-providers/terraform-provider-aws/tree/ma
     - Across all 3 AZs
 - Drawing exercise of the above architecture 
 
-## What if I want to know more!?
+## What if I want to know more!? 
+- Watch further into networking fundamentals: [Aws Network Fundamentals](https://www.youtube.com/watch?v=hiKPPy584Mg)
 
 
 ---
