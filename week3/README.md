@@ -17,8 +17,8 @@ How do I keep my application reachable during high load and disaster
 - Implementing a two-tiered AWS Cloud Architecture 
 for my application with HA and  
 
-## What should I learn on weekend?
-
+## What should I learn on weekend?  
+- AWS Networking 101: [Youtube Link, Watch me first](https://www.youtube.com/watch?v=hiKPPy584Mg)
 - VPCs and Subnets: 
     - https://docs.aws.amazon.com/en_pv/vpc/latest/userguide/VPC_Subnets.html
 - Route Tables: 
