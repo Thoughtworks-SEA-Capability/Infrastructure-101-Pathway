@@ -18,7 +18,7 @@ How do I keep my application reachable during high load and disaster
 for my application with HA and  
 
 ## What should I learn on weekend?  
-- AWS Networking 101: [Youtube Link, Watch me first](https://www.youtube.com/watch?v=hiKPPy584Mg)
+- AWS Networking 101: Relevant Section 0~12min. [Youtube Link, Watch me upto minute 12](https://www.youtube.com/watch?v=hiKPPy584Mg)
 - VPCs and Subnets: 
     - https://docs.aws.amazon.com/en_pv/vpc/latest/userguide/VPC_Subnets.html
 - Route Tables: 
