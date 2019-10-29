@@ -18,7 +18,8 @@ This week, we will talk about containerisation to ensure our applications run ac
 1. [Overview The History of Containers](https://www.redhat.com/en/blog/history-containers) (~15min)
 2. [Understanding Containers](https://medium.com/@jessgreb01/what-is-the-difference-between-a-process-a-container-and-a-vm-f36ba0f8a8f7) (~10min)
 3. [Getting started with Docker](https://docs.docker.com/get-started/) (~70min)
-4. [An Introduction to Containers - deep dive into container internals](https://www.youtube.com/watch?v=sK5i-N34im8) (~60min)
+4. [Creating Containers from Scratch](https://www.youtube.com/watch?v=8fi7uSYlOdc) (~45)
+5. [An Introduction to Containers - deep dive into container internals](https://www.youtube.com/watch?v=sK5i-N34im8) (~60min)
 
 ## What will we do in Guild?
 **End Goal**:
@@ -40,9 +41,11 @@ This week, we will talk about containerisation to ensure our applications run ac
 
 ## What if I want to know more!?
 1. Deep Dive into Docker: [The Docker Book](https://www.amazon.com/Docker-Book-containerisation-new-virtualization-ebook/dp/B00LRROTI4) - written step-by-step for system administrators, operations staff on
-2. [Docker Training](https://success.docker.com/training/) - compilation of self-paced and instructor-led courses offered by Docker
-3. [Creating a Simple Docker Base Image](https://docs.docker.com/develop/develop-images/baseimages/)
-4. [10+ Top Open-Source Tools for Docker Security](https://techbeacon.com/security/10-top-open-source-tools-docker-security)
+2. [Docker 101 Tutorial](https://docker-101.dev.irwin.tech/tutorial/) - Official tutorial to get started in Docker by Community Members
+3. [Docker Training](https://success.docker.com/training/) - compilation of self-paced and instructor-led courses offered by Docker
+4. [Creating a Simple Docker Base Image](https://docs.docker.com/develop/develop-images/baseimages/)
+5. [10+ Top Open-Source Tools for Docker Security](https://techbeacon.com/security/10-top-open-source-tools-docker-security)
+6. [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
 ---
 
