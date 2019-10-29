@@ -25,6 +25,9 @@ A terraform tutorial will introduce you to the basic concepts of Terraform and s
 
 [Getting started with Terraform on AWS (2 hours)](https://learn.hashicorp.com/terraform/getting-started/install)
 
+[AWS docs on user data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)
+[User data through terraform](https://www.bogotobogo.com/DevOps/Terraform/Terraform-terraform-userdata.php)
+
 ## What will we do in Guild?
 
 In this guild session we will deploy our app from last time on AWS.
@@ -33,6 +36,8 @@ We will start by "manually" creating our infrastructure like EC2 instance, and s
 After we have worked through the process on the AWS console we will then _codify_ our configuration as Infrastructure as code by using Terraform. 
 
 At the end of this guild we will have written Terraform scripts to automatically provision the infrastructure necessary to run service on AWS.
+Our instance will automatically start the jar from last week on its start up. We will be able to SSH into the instances to see logs and debug our application.
+ 
 
 ## What if I want to know more!?
 
