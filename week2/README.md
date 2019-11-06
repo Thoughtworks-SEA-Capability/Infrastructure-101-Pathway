@@ -26,6 +26,7 @@ A terraform tutorial will introduce you to the basic concepts of Terraform and s
 [Getting started with Terraform on AWS (2 hours)](https://learn.hashicorp.com/terraform/getting-started/install)
 
 [AWS docs on user data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)
+
 [User data through terraform](https://www.bogotobogo.com/DevOps/Terraform/Terraform-terraform-userdata.php)
 
 ## What will we do in Guild?
