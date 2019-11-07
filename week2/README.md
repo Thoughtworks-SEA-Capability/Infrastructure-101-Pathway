@@ -38,7 +38,12 @@ After we have worked through the process on the AWS console we will then _codify
 
 At the end of this guild we will have written Terraform scripts to automatically provision the infrastructure necessary to run service on AWS.
 Our instance will automatically start the jar from last week on its start up. We will be able to SSH into the instances to see logs and debug our application.
- 
+  
+* How can we make sure our colleagues can work with our terraform code on their computer?
+* How can we make sure that our service can be reached if our first instance is replaced with a new one? 
+* Let's give *all* our resources reasonable identifiers
+* How can we see logs of users trying to access non existing endpoints? 
+* How can we secure our instances against unintended access?
 
 ## What if I want to know more!?
 
