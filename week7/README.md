@@ -28,9 +28,11 @@ We are going to use GoCD as our Continous Delivery tool.
 
 ## What will we do in Guild?
 
+- Deploy GoCD server to the EKS cluster
+- Setup GoCD elastic agent to deploy your application to the Kubernetes cluster
+- Setup GoCD elastic agent to deploy your application to the VM
 - Writing some basic GoCD yaml file to deploy the application to Kubernetes cluster
 - Configure GoCD agents to talk with GoCD servers?
-
 
 ## What if I want to know more!?
 
