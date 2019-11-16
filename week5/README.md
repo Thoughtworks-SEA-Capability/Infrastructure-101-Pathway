@@ -18,8 +18,6 @@
   - [[Video] Breakdown of a Pod spec](https://www.youtube.com/watch?v=T6E2yzlEX0Q&t=82s) (**~7mins**)
   - [[Docs] Breakdown of a Deployment spec](https://devopscube.com/kubernetes-deployment-tutorial/) **(~7 mins**)
   - [[Article] k8s Services Explained with Diagrams](https://medium.com/swlh/kubernetes-services-simply-visually-explained-2d84e58d70e5) (**~10 mins**)
-
-  Optional Readings:
   - **OPTIONAL** [[Docs] Overview of what Kubernetes is and isn't](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) (**~10 mins**)
   - **OPTIONAL** [[Video] The Illustrated Children's Guide to Kubernetes](https://www.youtube.com/watch?v=4ht22ReBjno) - Just a fun video that introduces the essential abstractions of Kubernetes (**~9 mins**)
   - **OPTIONAL** [[Video] k8s NodePort Service Explained](https://www.youtube.com/watch?v=5lzUpDtmWgM) - A good step by step explanation of the NodePort Service type (**~14 mins**) 
@@ -48,38 +46,30 @@
 3. Now that `kubectl` is pointing to your cluster, what command can you use to check that the cluster indeed has node(s) connected?
    
 4. How can we deploy the image `servicea` into the cluster as just a `Pod`?
-     - Bonus Question: Which method did you use to deploy the Pod? Can you do it with a single command?
+   - Bonus Question: Which method did you use to deploy the Pod? Can you do it with a single command?
 
 5. `servicea` is serving an endpoint `/getCats`. How can we hit this endpoint from your local machine?
    - There are many ways to do this, but for this step, use the simplest approach!
 
 6. Run the `disaster-a.sh` script.
-   
-   Oh no! Disaster struck! Your pod has mysteriously disappeared! If this was a public application, millions of cat lovers would be really sad because they can't see cats now.
-   
-   We need to prevent this from happening! What should we deploy to the cluster to ensure that the `servicea` Pods can be highly available (has more than one Pod and at least one Pod is up at all times)?
+   - Oh no! Disaster struck! Your pod has mysteriously disappeared! If this was a public application, millions of cat lovers would be really sad because they can't see cats now.
+   - We need to prevent this from happening! What should we deploy to the cluster to ensure that the `servicea` Pods can be highly available (has more than one Pod and at least one Pod is up at all times)?
 
 7. Now that you have multiple Pods for `servicea`, let's try to hit the `/getCats` endpoint again. 
-
-   How should we choose which Pod's endpoint to hit? Since we learnt from `disaster-a` that Pods may come and go unexpectedly, how can we let Kubernetes help us decide which `servicea` Pod to route our request to so that we can reliably get the response that we need?
+   - How should we choose which Pod's endpoint to hit? Since we learnt from `disaster-a` that Pods may come and go unexpectedly, how can we let Kubernetes help us decide which `servicea` Pod to route our request to so that we can reliably get the response that we need?
 
 8. Deploy `serviceb` in the same way as you did for `servicea` 
-   
-    - Notice that the Pods for `serviceb` do not start up healthily. How can you debug why the Pods are not starting up correctly?
-    
-    - The Pods are crashing because it is missing a required environment variable configuration. How can we add this configuration in?
-      - Even though we can add the env var when we build application or image, for such environment specific variable, we should aim to only configure them at the point of deployment.
+   - Notice that the Pods for `serviceb` do not start up healthily. How can you debug why the Pods are not starting up correctly?
+   - The Pods are crashing because it is missing a required environment variable configuration. How can we add this configuration in?
+     - *Even though we can add the env var when we build application or image, for such environment specific variable, we should aim to only configure them at the point of deployment.*
 
-9. `serviceb` has an endpoint `/meow`. It works by calling `servicea` for the list of cats and then processing each of their meows. 
-    
-    `serviceb` takes in an environment variable, `blabla`, which determines what URL it should use to reach `servicea` and get the cat data.
-
-    Find out what the URL should be and hit the `/meow` endpoint from your machine to see the results.
+9.  `serviceb` has an endpoint `/meow`. It works by calling `servicea` for the list of cats and then processing each of their meows.
+    - `serviceb` takes in an environment variable, `blabla`, which determines what URL it should use to reach `servicea` and get the cat data.
+    - Find out what the URL should be and hit the `/meow` endpoint from your machine to see the results.
       - For ease of testing, you can try out `curl` commands from within a `serviceb` Pod to see what works
 
 10. A new version of `serviceb` has just been released! Update your Deployment to use this new image version.
-    
-    Aaand of course there're some errors and now your Pods are crashing. How can we rollback your deployment to the older working version?
+    - Aaand of course there're some errors and now your Pods are crashing. How can we rollback your deployment to the older working version?
 
 ### Extra Activities
 
