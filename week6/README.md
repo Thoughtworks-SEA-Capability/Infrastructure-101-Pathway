@@ -84,7 +84,15 @@ Note: We will be learning Helm 2, not Helm 3 which was recently released.
 ## What if I want to know more!?
 
 - [[Hands-on] AWS EKS Workshop](https://eksworkshop.com/) - This workshop covers many different topics on what you can do with EKS
+- [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/) - Abstraction to store and manage sensitive information in your cluster
+- [Kubernetes External Secrets Controller](https://github.com/godaddy/kubernetes-external-secrets) - How to automate the injection of Kubernetes Secret resources into your cluster
+- [Getting started with Kubernetes RBAC](https://docs.bitnami.com/kubernetes/how-to/configure-rbac-in-your-kubernetes-cluster/)
+- [Kubernetes Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) - Persistent file sharing/storage that can be accessed across different Pods
 - [Securing your NGINX Ingress Controller with TLS/HTTPS](https://kubernetes.github.io/ingress-nginx/user-guide/tls/)
+- [Introduction to Istio (Service Mesh)](https://www.youtube.com/watch?v=1iyFq2VaL5Y) - Short 3 mins video to give a general overview of what it does
+- [Official Docs on what is Istio](https://istio.io/docs/concepts/what-is-istio/) - The overwhelming version of what Istio is. You can read the rest of the [Istio Concepts here](https://istio.io/docs/concepts/) for deeper understanding. 
+
+
 
 ---
 
