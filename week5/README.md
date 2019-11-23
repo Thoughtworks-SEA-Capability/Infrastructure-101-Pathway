@@ -30,7 +30,7 @@
 ## What will we do in Guild?
 
 ### Setup
-- Install Docker CE
+- Install [Docker Desktop](https://docs.docker.com/docker-for-mac/install/)
 - Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 ### End Goal
