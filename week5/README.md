@@ -40,6 +40,8 @@
   - MeowApplication: `janesee3/meow-application:1`
 - Configure and interact with these deployed applications
 
+Note: For the purpose of practice, instead of using single `kubectl` commands to achieve what we want, we will use YAML config files instead.
+
 ### Steps
 
 1. Start a Kubernetes cluster on your local machine using Docker
@@ -56,7 +58,7 @@
 5. `CatApplication` is serving an endpoint `/cats`. How can we hit this endpoint from your local machine?
    - There are many ways to do this, but for this step, use the simplest approach!
 
-6. Run the `disaster-a.sh` script.
+6. Run the `disaster.sh` script.
    - Oh no! Disaster struck! Your pod has mysteriously disappeared! If this was a public application, millions of cat lovers would be really sad because they can't see cats now.
    - We need to prevent this from happening! What should we deploy to the cluster to ensure that the `CatApplication` Pods can be highly available (has more than one Pod and at least one Pod is up at all times)?
 
@@ -77,7 +79,7 @@
 
 ### Extra Activities
 
-1. WIP
+1. How can we decouple the configurations for application environment variables from the `Deployment` YAML config? (Hint: Lookup `ConfigMap`)
 
 ## What if I want to know more!?
   - [[Hands-on] Interactive tutorial on the basics of Kubernetes using a local cluster](https://kubernetes.io/docs/tutorials/kubernetes-basics/) (**~2 hours**)
