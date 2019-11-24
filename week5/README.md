@@ -41,6 +41,7 @@
   - MeowApplication: `janesee3/meow-application:1`
 - Configure and interact with these deployed applications
 - **Note:** For the purpose of practice, please refrain from using `kubectl run` or `kubectl expose` commands. We will use `kubectl apply` on YAML config files instead.
+- If you find yourself stuck, you can refer to the `suggested-solutions` folder!
 
 ### Steps
 
@@ -55,7 +56,7 @@
 4. How can we deploy the image for `CatApplication` into the cluster as just a `Pod`?
    - **Hint** - Refer to ["How to create a K8S Pod"](https://www.youtube.com/watch?v=T6E2yzlEX0Q&t=82s)
 
-5. `CatApplication` is serving an endpoint `/cats`. How can we hit this endpoint from your local machine?
+5. `CatApplication` is serving an endpoint `/cats` on port `8080`. How can we hit this endpoint from your local machine?
    - There are many ways to do this, but for this step, use the simplest approach without creating any new K8S resource
 
 6. Run the `disaster.sh` script.
@@ -73,7 +74,7 @@
    - The Pods are crashing because it is missing a required environment variable configuration `DO_YOU_LIKE_CATS`. How can we add this configuration in?
      - *Even though we can add the env var when we build application or image, for environment specific variables, we should aim to only configure them at the point of deployment.*
 
-9.  `MeowApplication` has an endpoint `/meow`. It works by first calling `CatApplication` internally for the list of cats and then processing their meows.
+9.  `MeowApplication` has an endpoint `/meow` on port `8080`. It works by first calling `CatApplication` internally for the list of cats and then processing their meows.
     - Test out the `/meow` endpoint and debug the problem
     - For ease of testing, can we try out `curl` commands from within a `MeowApplication` Pod to see what works?
 

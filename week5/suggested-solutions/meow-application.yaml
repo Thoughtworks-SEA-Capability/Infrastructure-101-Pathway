@@ -1,0 +1,53 @@
+# ---
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: meow-application
+#   labels:
+#     my-label: meow-application
+# spec:
+#   containers:
+#   - name: meow-application
+#     image: janesee3/meow-application:1
+#     env:
+#     - name: "DO_YOU_LIKE_CATS"
+#       value: "YES"
+#     - name: "CATS_URL"
+#       value: "http://10.X.X.X:8080/cats"
+
+---
+apiVersion: app/v1
+kind: Deployment
+metadata:
+  name: meow-application
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      my-label: meow-application
+  template:
+    metadata:
+      labels:
+        my-label: meow-application
+    spec:
+        containers:
+        - name: meow-application
+          image: janesee3/meow-application:1
+          env:
+          - name: "DO_YOU_LIKE_CATS"
+            value: "YES"
+          - name: "CATS_URL"
+            value: "http://cat-application:8080/cats"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: meow-application
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: name-of-exposed-port-on-container
+  selector:
+    my-label: meow-application
