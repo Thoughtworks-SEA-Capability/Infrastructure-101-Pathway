@@ -1,0 +1,48 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cat-application
+spec:
+  # Deployment specs
+  replicas: 2
+  selector:
+    matchLabels:
+      my-label: cat-application
+  # Pod template for this deployment
+  template:
+    metadata:
+      labels:
+        my-label: cat-application
+    spec:
+        containers:
+          - name: cat-application
+            image: janesee3/cat-application:1
+            
+            # Define the ports that this container exposes
+            ports:
+              - name: my-exposed-port
+                containerPort: 8080
+                protocol: TCP
+                
+            # Define the endpoint that kublet will use to check if this pod is ready
+            readinessProbe:
+              httpGet:
+                path: /cats
+                port: my-exposed-port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cat-service
+spec:
+  type: ClusterIP
+  selector:
+    my-label: cat-application
+  ports:
+      # The port exposed for this Service
+    - port: 8080 
+      # The port exposed on the target Pods
+      # targetPort: 8080
+      # You can also use the port name as defined in the Deployment/Pod Spec for this exposed port
+      name: my-exposed-port

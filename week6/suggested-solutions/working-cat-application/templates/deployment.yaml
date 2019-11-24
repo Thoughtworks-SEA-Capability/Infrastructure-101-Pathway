@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "cat-application.fullname" . }}
+  labels:
+{{ include "cat-application.labels" . | indent 4 }}  
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "cat-application.name" . }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "cat-application.name" . }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - name: {{ .Values.containerPortName }}
+              containerPort: 8080
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /cats
+              port: {{ .Values.containerPortName }}

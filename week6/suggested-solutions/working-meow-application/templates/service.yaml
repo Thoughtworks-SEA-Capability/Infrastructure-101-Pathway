@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "meow-application.fullname" . }}
+  labels:
+{{ include "meow-application.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app.kubernetes.io/name: {{ include "meow-application.name" . }}
+  ports:
+    - port: {{ .Values.service.port }}
+      name: {{ .Values.containerPortName }}

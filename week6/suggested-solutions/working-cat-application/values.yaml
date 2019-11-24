@@ -1,0 +1,23 @@
+# Default values for cat-application.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 2
+
+image:
+  repository: "janesee3/cat-application"
+  tag: "1"
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  class: "nginx"
+  host: "a71fc40790ebf11eaa39502accb1c752-1170739271.ap-southeast-1.elb.amazonaws.com"
+  path: "/cats"
+  backendName: "cat-application"
+  backendPort: 8080
+
+containerPortName: cat-port

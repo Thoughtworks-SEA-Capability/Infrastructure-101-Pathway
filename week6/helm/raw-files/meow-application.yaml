@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meow-application
+spec:
+  
+  # Deployment specs
+  replicas: 1
+  selector:
+    matchLabels:
+      my-label: meow-application
+  
+  # Pod template for this deployment
+  template:
+    metadata:
+      labels:
+        my-label: meow-application
+    spec:
+        containers:
+          - name: meow-application
+            image: janesee3/meow-application:1
+            env:
+              - name: "DO_YOU_LIKE_CATS"
+                value: "YES"
+              - name: "CATS_URL"
+                value: "http://cat-service:8080/cats"
+            
+            # Define the ports that this container exposes
+            ports:
+              - name: my-exposed-port
+                containerPort: 8080
+                protocol: TCP
+                
+            # Define the endpoint that kublet will use to check if this pod is ready
+            readinessProbe:
+              httpGet:
+                path: /meow
+                port: my-exposed-port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: meow-service
+spec:
+  type: ClusterIP
+  selector:
+    my-label: meow-application
+  ports:
+      # The port exposed for this Service
+    - port: 8080 
+      # The port exposed on the target Pods
+      # targetPort: 8080
+      # You can also use the port name as defined in the Deployment/Pod Spec for this exposed port
+      name: my-exposed-port

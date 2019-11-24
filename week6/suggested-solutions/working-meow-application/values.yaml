@@ -1,0 +1,27 @@
+# Default values for meow-application.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 2
+
+image:
+  repository: "janesee3/meow-application"
+  tag: "1"
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  class: "nginx"
+  host: "a71fc40790ebf11eaa39502accb1c752-1170739271.ap-southeast-1.elb.amazonaws.com"
+  path: "/meow"
+  backendName: "meow-application"
+  backendPort: 8080
+
+containerPortName: meow-port
+
+env:
+  DO_YOU_LIKE_CATS: "YES"
+  CATS_URL: "http://cat-application:8080/cats"
