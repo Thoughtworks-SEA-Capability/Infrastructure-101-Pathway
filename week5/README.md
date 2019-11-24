@@ -11,18 +11,19 @@
 
 ## What should I learn on the weekend?
 
-  - [[Article] What is container orchestration and why it is needed](https://opensource.com/life/16/9/containing-container-chaos-kubernetes) (**~5 mins**)
+  - [What is container orchestration and why it is needed](https://opensource.com/life/16/9/containing-container-chaos-kubernetes) (**~5 mins**)
   - [[Video] Overview of Kubernetes Architecture](https://www.youtube.com/watch?v=8C_SCDbUJTg) - Learn about the main components of a K8s Cluster (**~10 mins**)
-  - [[Article] Introduction to Kubernetes Abstractions](https://rtfm.co.ua/en/kubernetes-part-1-architecture-and-main-components-overview/) - Introduction to Pods, Services, Deployments etc (**~15mins**)
-  - [[Docs] Introduction to K8S Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview) **(~5 mins**)
-  - [[Video] Breakdown of a Pod spec](https://www.youtube.com/watch?v=T6E2yzlEX0Q&t=82s) (**~7mins**)
-  - [[Docs] Breakdown of a Deployment spec](https://devopscube.com/kubernetes-deployment-tutorial/) **(~7 mins**)
-  - [[Article] K8S Services Explained with Diagrams](https://medium.com/swlh/kubernetes-services-simply-visually-explained-2d84e58d70e5) (**~10 mins**)
+  - [Introduction to Kubernetes Abstractions](https://rtfm.co.ua/en/kubernetes-part-1-architecture-and-main-components-overview/) - Introduction to Pods, Services, Deployments etc (**~15mins**)
+  - [Introduction to K8S Pod](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview) **(~5 mins**)
+  - [[Video] How to create a K8S Pod](https://www.youtube.com/watch?v=T6E2yzlEX0Q&t=82s) (**~7mins**)
+  - [How to create a K8S Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) **(~7 mins**)
+  - [Introduction to K8S Service Types with Diagrams](https://medium.com/swlh/kubernetes-services-simply-visually-explained-2d84e58d70e5) (**~10 mins**)
+  - [How to create a K8S ClusterIP Service](https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/#creating-a-service) (**~ 2mins**)
   - **OPTIONAL** [[Docs] Overview of what Kubernetes is and isn't](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) (**~10 mins**)
   - **OPTIONAL** [[Video] The Illustrated Children's Guide to Kubernetes](https://www.youtube.com/watch?v=4ht22ReBjno) - Just a fun video that introduces the essential abstractions of Kubernetes (**~9 mins**)
   - **OPTIONAL** [[Docs] Walkthrough of things you can do with K8S Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment)
-  - **OPTIONAL** [[Video] k8s NodePort Service Explained](https://www.youtube.com/watch?v=5lzUpDtmWgM) - A good step by step explanation of the NodePort Service type (**~14 mins**) 
   - **OPTIONAL** [[Docs] Kubernetes Service](https://kubernetes.io/docs/concepts/services-networking/service/) - Detailed information about everything else that k8s Service can do (**~30mins**)
+  - **OPTIONAL** [[Video] How to create a K8S NodePort Service](https://www.youtube.com/watch?v=5lzUpDtmWgM) (**~14 mins**) 
   - API References:
     - [Kubernetes v1.14 Spec Docs](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.14/)
     - [`kubectl` reference sheet](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
@@ -39,8 +40,7 @@
   - CatApplication: `janesee3/cat-application:1`
   - MeowApplication: `janesee3/meow-application:1`
 - Configure and interact with these deployed applications
-
-Note: For the purpose of practice, instead of using single `kubectl` commands to achieve what we want, we will use YAML config files instead.
+- **Note:** For the purpose of practice, please refrain from using `kubectl run` or `kubectl expose` commands. We will use `kubectl apply` on YAML config files instead.
 
 ### Steps
 
@@ -53,17 +53,20 @@ Note: For the purpose of practice, instead of using single `kubectl` commands to
 3. Now that `kubectl` is pointing to your cluster, what command can you use to check that the cluster indeed has node(s) connected?
    
 4. How can we deploy the image for `CatApplication` into the cluster as just a `Pod`?
-   - **Bonus Question**: Which method did you use to deploy the Pod? Even though for this session we encourage you to write out the yaml config, can you figure out how to do this with just a single command instead?
+   - **Hint** - Refer to ["How to create a K8S Pod"](https://www.youtube.com/watch?v=T6E2yzlEX0Q&t=82s)
 
 5. `CatApplication` is serving an endpoint `/cats`. How can we hit this endpoint from your local machine?
-   - There are many ways to do this, but for this step, use the simplest approach!
+   - There are many ways to do this, but for this step, use the simplest approach without creating any new K8S resource
 
 6. Run the `disaster.sh` script.
    - Oh no! Disaster struck! Your pod has mysteriously disappeared! If this was a public application, millions of cat lovers would be really sad because they can't see cats now.
-   - We need to prevent this from happening! What should we deploy to the cluster to ensure that the `CatApplication` Pods can be highly available (has more than one Pod and at least one Pod is up at all times)?
+   - We need to prevent this from happening! What should we deploy to the cluster to ensure that the `CatApplication` Pods can be **highly available** - has more than one Pod and at least one Pod is up at all times?
+   - **Hint** - Refer [here](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) for spec reference 
 
 7. Now that you have multiple Pods for `CatApplication`, let's try to hit the `/cats` endpoint again. 
-   - How should we choose which Pod's endpoint to hit? Since we learnt from `disaster-a` that Pods may come and go unexpectedly, how can we let Kubernetes help us decide which `CatApplication` Pod to route our request to so that we can reliably get the response that we need?
+   - How should we choose which Pod's endpoint to hit? 
+   - Since we learnt from `disaster.sh` that Pods may come and go unexpectedly, how can we let Kubernetes help us decide which `CatApplication` Pod to route our request to so that we can reliably get the response that we need?
+   - **Hint** - Refer [here](https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/#creating-a-service) for spec reference 
 
 8. Deploy `MeowApplication` in the same way you did for `CatApplication` 
    - Notice that the Pods for `MeowApplication` do not start up healthily. How can you debug why the Pods are not starting up correctly?
