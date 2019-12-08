@@ -2,10 +2,10 @@
 
 ## What will I learn?
 
-We will cover some basic knowledges about differences between CI/CD and Continuous Delivery concepts.
-We are going to use GoCD as our Continous Delivery tool.
+We will cover some basic knowledge about differences between CI/CD and Continuous Delivery concepts.
+We are going to use GoCD as our Continuous Delivery tool.
 
-- Understand what's the difference between CI/CD and Continous Delivery?
+- Understand what's the difference between CI/CD and Continuous Delivery?
 - What and how I can create a pipeline?
 - Understand how we can create GoCD pipeline through UI and yaml?
 - What is a Value Stream Map?
@@ -29,13 +29,58 @@ We are going to use GoCD as our Continous Delivery tool.
   - [Introduction to GoCD](https://www.gocd.org/why-gocd/)
   - [GoCD Test Drive](https://www.gocd.org/test-drive-gocd/)
   - [GoCD Yaml Documentation](https://github.com/tomzo/gocd-yaml-config-plugin)
+  - [Pipeline as a code](https://docs.gocd.org/current/advanced_usage/pipelines_as_code.html)
 
 ## What will we do in Guild?
 
-- Writing some basic GoCD yaml file to deploy the application to Kubernetes cluster
-- Head over to `https://github.com/Thoughtworks-SEA-Capability/Infrastructure-101-Practice/tree/master/week7` to find the exercises
+- Deploy GoCD server and agent to [your local machine](https://www.gocd.org/test-drive-gocd.html)
+- Familiarise with GoCD by creating a simple pipeline using its UI 
+- Configure pipeline as a code 
+- Writing some basic GoCD yaml file to deploy the application to your existing Kubernetes cluster
+- Explore how you can structure your pipelines
 
+## Preparation work
+
+As we are going to deploy the existing applications you've exposed to from the previous guild. 
+Do prepare the following things which we can discussed together as a team before 
+1. How do you want to structure your deployment starting from the committing your code to repo to kubernetes deployment
+2. Create scripts to help you aid the deployment steps
+
+## Practise
+
+We will be exploring GoCD UI to create pipeline at the start to get familiarise with GoCD components and jargon.
+Followed by Pipeline as a Code with YAML configuration.
+
+Exercise: GoCD UI
+Objective: We are going to create a pipeline which will echo "Hello World"
+
+Rough steps:
+1. How do I assign an agent to perform the task?
+1. How do I create a task to echo "Hello World"?
+1. Where do I run my script to echo "Hello World"?
+1. Where do I see the log of what I have executed?
+
+Exercise: Team sharing on the pipeline structure
+Objective: Exploring how you can structure your pipelines 
+
+
+Exercise: Pipeline as a Code (YAML)
+Note: Refer to GoCD YAML configuration link above to figure out how you can write your YAML pipeline to be
+Objective: We will be deploying the applications from the previous guild via pipeline to kubernetes cluster
+
+Rough steps:
+1. What file extension do I need to create my pipeline as a code?
+1. How can I tell GoCD which configuration repository I am interested in to pull my pipeline as a code?
+1. How can I tell GoCD which application repository I am interested in to deploy my application?
+1. How can I assign my agent to perform task through YAML?
+1. How should I sequence my pipelines to be?
+1. How should I structure my shell scripts?
+ 
+ 
 ## What if I want to know more!?
+
+You can deploy GoCD server to kubernetes with elastic agents.
+There is a reference setup you could refer to at `Infrastructure-101-Practise` repository.
 
 ---
 
