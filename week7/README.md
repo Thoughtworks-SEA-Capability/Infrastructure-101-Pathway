@@ -34,25 +34,26 @@ We are going to use GoCD as our Continuous Delivery tool.
 ## What will we do in Guild?
 
 - Deploy GoCD server and agent to [your local machine](https://www.gocd.org/test-drive-gocd.html)
-- Familiarise with GoCD by creating a simple pipeline using its UI 
-- Configure pipeline as a code 
+- Familiarise with GoCD by creating a simple pipeline using its UI
+- Configure pipeline as a code
 - Writing some basic GoCD yaml file to deploy the application to your existing Kubernetes cluster
 - Explore how you can structure your pipelines
 
 ## Preparation work
 
-As we are going to deploy the existing applications you've exposed to from the previous guild. 
-Do prepare the following things which we can discussed together as a team before 
+As we are going to deploy the existing applications you've exposed to from the previous guild.
+Do prepare the following things which we can discussed together as a team before
 1. How do you want to structure your deployment starting from the committing your code to repo to kubernetes deployment
 2. Create scripts to help you aid the deployment steps
 
-## Practise
+## Practises
 
 We will be exploring GoCD UI to create pipeline at the start to get familiarise with GoCD components and jargon.
 Followed by Pipeline as a Code with YAML configuration.
 
 Exercise: GoCD UI
-Objective: We are going to create a pipeline which will echo "Hello World"
+-
+*Objective:* We are going to create a pipeline which will echo "Hello World"
 
 Rough steps:
 1. How do I assign an agent to perform the task?
@@ -61,12 +62,15 @@ Rough steps:
 1. Where do I see the log of what I have executed?
 
 Exercise: Team sharing on the pipeline structure
-Objective: Exploring how you can structure your pipelines 
+-
+*Objective:* Exploring how you can structure your pipelines
 
 
 Exercise: Pipeline as a Code (YAML)
-Note: Refer to GoCD YAML configuration link above to figure out how you can write your YAML pipeline to be
-Objective: We will be deploying the applications from the previous guild via pipeline to kubernetes cluster
+-
+*Note:* Refer to GoCD YAML configuration link above to figure out how you can write your YAML pipeline to be
+
+*Objective:* We will be deploying the applications from the previous guild via pipeline to kubernetes cluster
 
 Rough steps:
 1. What file extension do I need to create my pipeline as a code?
@@ -75,8 +79,8 @@ Rough steps:
 1. How can I assign my agent to perform task through YAML?
 1. How should I sequence my pipelines to be?
 1. How should I structure my shell scripts?
- 
- 
+
+
 ## What if I want to know more!?
 
 You can deploy GoCD server to kubernetes with elastic agents.
