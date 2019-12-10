@@ -44,9 +44,8 @@ We are going to use GoCD as our Continuous Delivery tool.
 As we are going to deploy the existing applications you've exposed to from the previous guild.
 Do prepare the following things which we can discussed together as a team before
 
-1. How do you want to structure your deployment starting from the committing your code to repo to kubernetes deployment
-
-2. Create scripts to help you aid the deployment steps
+- How do you want to structure your deployment starting from the committing your code to repo to kubernetes deployment
+- Create scripts to help you aid the deployment steps
 
 ## Practises
 
@@ -58,10 +57,11 @@ Exercise: GoCD UI
 *Objective:* We are going to create a pipeline which will echo "Hello World"
 
 Rough steps:
-1. How do I assign an agent to perform the task?
-1. How do I create a task to echo "Hello World"?
-1. Where do I run my script to echo "Hello World"?
-1. Where do I see the log of what I have executed?
+
+- How do I assign an agent to perform the task?
+- How do I create a task to echo "Hello World"?
+- Where do I run my script to echo "Hello World"?
+- Where do I see the log of what I have executed?
 
 Exercise: Team sharing on the pipeline structure
 -
@@ -75,12 +75,13 @@ Exercise: Pipeline as a Code (YAML)
 *Objective:* We will be deploying the applications from the previous guild via pipeline to kubernetes cluster
 
 Rough steps:
-1. What file extension do I need to create my pipeline as a code?
-1. How can I tell GoCD which configuration repository I am interested in to pull my pipeline as a code?
-1. How can I tell GoCD which application repository I am interested in to deploy my application?
-1. How can I assign my agent to perform task through YAML?
-1. How should I sequence my pipelines to be?
-1. How should I structure my shell scripts?
+
+- What file extension do I need to create my pipeline as a code?
+- How can I tell GoCD which configuration repository I am interested in to pull my pipeline as a code?
+- How can I tell GoCD which application repository I am interested in to deploy my application?
+- How can I assign my agent to perform task through YAML?
+- How should I sequence my pipelines to be?
+- How should I structure my shell scripts?
 
 
 ## What if I want to know more!?
