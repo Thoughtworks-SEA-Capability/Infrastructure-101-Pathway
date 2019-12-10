@@ -43,7 +43,9 @@ We are going to use GoCD as our Continuous Delivery tool.
 
 As we are going to deploy the existing applications you've exposed to from the previous guild.
 Do prepare the following things which we can discussed together as a team before
+
 1. How do you want to structure your deployment starting from the committing your code to repo to kubernetes deployment
+
 2. Create scripts to help you aid the deployment steps
 
 ## Practises
