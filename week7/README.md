@@ -23,7 +23,7 @@ We are going to use GoCD as our Continuous Delivery tool.
 - More about GoCD
   - [Fan in Fan out](https://www.gocd.org/2017/04/17/build-propagation-using-fan-in-fan-out.html)
   - [GoCD agents setup](https://www.gocd.org/2019/09/17/configure-gocd-agents-kubernetes-static-elastic/)
-  - [Install GoCD server on k8s](https://github.com/helm/charts/tree/master/stable/gocd) . Note: the command available was for Helm 2. Refer to the week 7 folder under `Infrastructure-101-Practise` to know more about
+  - [Install GoCD server on k8s](https://github.com/helm/charts/tree/master/stable/gocd) . Note: the command available was for Helm 3. Refer to the week 7 folder under `Infrastructure-101-Practise` to know more about
 
 - Understand how we can do Infrastructure as a Code with GoCD?
   - [Introduction to GoCD](https://www.gocd.org/why-gocd/)
