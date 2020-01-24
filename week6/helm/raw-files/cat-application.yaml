@@ -45,4 +45,4 @@ spec:
       # The port exposed on the target Pods
       # targetPort: 8080
       # You can also use the port name as defined in the Deployment/Pod Spec for this exposed port
-      name: my-exposed-port
+      targetPort: my-exposed-port

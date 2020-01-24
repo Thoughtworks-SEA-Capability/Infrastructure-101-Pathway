@@ -10,4 +10,4 @@ spec:
     app.kubernetes.io/name: {{ include "meow-application.name" . }}
   ports:
     - port: {{ .Values.service.port }}
-      name: {{ .Values.containerPortName }}
+      targetPort: {{ .Values.containerPortName }}

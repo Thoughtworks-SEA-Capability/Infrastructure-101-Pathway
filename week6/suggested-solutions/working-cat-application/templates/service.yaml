@@ -10,4 +10,4 @@ spec:
     app.kubernetes.io/name: {{ include "cat-application.name" . }}
   ports:
     - port: {{ .Values.service.port }}
-      name: {{ .Values.containerPortName }}
+      targetPort: {{ .Values.containerPortName }}
