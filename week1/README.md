@@ -24,7 +24,7 @@ Technologies covered:
 - Virtual Machines and Vagrant
   - [What is Immutable Infrastructure?](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure) (~10min)
   - [Virtual Machine](https://en.wikipedia.org/wiki/Virtual_machine) (~10min)
-  - [Vagrant Intro](https://www.vagrantup.com/intro/index.html) (~45min)
+  - [Vagrant Intro](https://www.vagrantup.com/intro) (~45min)
 - Ansible
   - [Docs](https://docs.ansible.com/) (Installation, Getting Started, and Playbooks, ~120min)
 - (extra) Packer
