@@ -28,7 +28,7 @@ Technologies covered:
 - Ansible
   - [Docs](https://docs.ansible.com/) (Installation, Getting Started, and Playbooks, ~120min)
 - (extra) Packer
-  - [Intro](https://www.packer.io/intro/index.html) (~30min)
+  - [Intro](https://www.packer.io/intro) (~30min)
 
 ## What will we do in Guild?
 
