@@ -55,6 +55,8 @@ Note: In this lesson, we're using **Helm 3**. When researching for extra materia
 
 ### Steps
 
+#### _If you are stuck, please refer to the `suggested-solutions/walkthrough.md` file_
+
 **Section 1: Spinning Up An EKS Cluster**
 
 - Make a copy of the `eks` folder in your own working directory, fill in the necessary values in the `main.tf` file and create your EKS cluster using terraform.
