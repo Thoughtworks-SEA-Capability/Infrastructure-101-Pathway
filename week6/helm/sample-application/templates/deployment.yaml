@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  # `sample-application.fullname` is a generated template function defined in "_helpers.tpl"
-  # See https://helm.sh/docs/topics/chart_template_guide/named_templates/
+  # `sample-application.fullname` is an auto generated template function defined in "_helpers.tpl"
+  # See https://helm.sh/docs/chart_template_guide/named_templates/
   name: {{ include "sample-application.fullname" . }}
-  # `sample-application.labels` is also a generated function, it gives the labels required for Helm to 
+  # `sample-application.labels` is also an auto generated function. It gives the labels required for Helm to
   # identify this resource
   labels:
-{{ include "sample-application.labels" . | indent 4 }}  
+{{ include "sample-application.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
         # `.Chart` is a special Helm Built-in Object.
-        # See https://helm.sh/docs/topics/chart_template_guide/builtin_objects/
+        # See https://helm.sh/docs/chart_template_guide/builtin_objects/
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:my-tag"

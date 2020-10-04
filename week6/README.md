@@ -25,90 +25,76 @@
 
 ### Helm
 
-**Note on Helm**
+Note: In this lesson, we're using **Helm 3**. When researching for extra materials or guides online, make sure that the materials are applicable for Helm 3! 
 
-We will be using **Helm 2** for this, not Helm 3 which was recently released. We will be touching on Helm concepts that does not change whether you are using Helm 2 and 3, so don't think that you're learning "outdated tech"! 
-Unfortunately, after the release of Helm 3, some of the official documentation for Helm 2 has been misplaced on their website so we have to resort to some third-party guides. 
-
-- [[Video] What is Helm, Why we need it, How to use it](https://www.youtube.com/watch?v=9cwjtN3gkD4) (12 mins)
 - **[IMPORTANT]** Helm Basics
-  - [Helm Architecture](https://v2.helm.sh/docs/architecture/) (**2 mins**)
-  - [Three Big Concepts of Helm](https://v2.helm.sh/docs/using_helm/#three-big-concepts) (**1 min**)
+  - [[Video] What is Helm, Why we need it, How to use it](https://www.youtube.com/watch?v=gbUBTTXuQwI&list=PLLYW3zEOaqlKYku0piyzzLFGpR9VpPvXR) (8 mins)
+  - [Helm Architecture](https://helm.sh/docs/architecture/) (**2 mins**)
+  - [Helm Concepts and How to Use Helm](https://helm.sh/docs/intro/using_helm/) (**5 min**)
   - [Structure of a Helm Chart](https://helm.sh/docs/topics/charts/) (**1 min**, you can stop after the "The Chart.yaml File" section)
-  - [Getting Started With Helm](https://helm.sh/docs/intro/getting_started/) (**5 mins**)
-- [How to initialise Helm on your cluster](https://devopscube.com/install-configure-helm-kubernetes/) (**~10 mins**)
-- [Finding Third Party Helm Charts](https://v2.helm.sh/docs/using_helm/#helm-search-finding-charts) (**2 mins**)
-- [How to Install a Helm Chart](https://v2.helm.sh/docs/using_helm/#helm-install-installing-a-package) (**3 mins**)
-- [**OPTIONAL** [Docs] Helm Command Basic Usages](https://v2.helm.sh/docs/using_helm/)
-- [**OPTIONAL** [Docs] Helm Commands List](https://v2.helm.sh/docs/helm/#helm)
-- [**OPTIONAL** [Docs] Helm Chart Template Guide](https://helm.sh/docs/topics/chart_template_guide/) - Extensive documentation on almost everything you need to know about Helm templating, but its pretty lengthy
-- [**OPTIONAL** [Docs] Helm Chart Best Practices](https://v2.helm.sh/docs/chart_best_practices/#the-chart-best-practices-guide)
+- [**OPTIONAL** [Docs] Helm Commands List](https://helm.sh/docs/helm/#helm)
+- [**OPTIONAL** [Docs] Helm Chart Template Guide](https://helm.sh/docs/chart_template_guide/) - Extensive documentation on almost everything you need to know about Helm templating, but its pretty lengthy
+- [**OPTIONAL** [Docs] Helm Chart Best Practices](https://helm.sh/docs/chart_best_practices/#the-chart-best-practices-guide)
 
 ## What will we do in Guild?
  
 ### Setup
 - [Install `aws-iam-authenticator`](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
-- Install `helm` **v2.16.X**
-  - Please run `brew install helm@2` followed by `brew link --force helm@2`
+- [Install `helm`](https://helm.sh/docs/intro/install/) 
 - [Install `terraform`](https://brewinstall.org/install-terraform-on-mac-with-brew/)
-- Install [Docker Desktop](https://docs.docker.com/docker-for-mac/install/)
-- Setup an AWS account with `awscli` access on the terminal. You can use the TW Beach account, or your personal one (note: Charges will apply for your personal account!)
+- [For Extra Activities] Install [Docker Desktop](https://docs.docker.com/docker-for-mac/install/)
+- Setup an AWS account with `awscli` access on the terminal. You can use the TW Beach account, or your personal one (note: Charges will apply for your personal account)
 
 ### End Goal
 - Create an EKS cluster using `terraform-aws-eks-module`
 - Deploy applications (`CatApplication` and `MeowApplication`)into the cluster using Helm. Docker image tags are provided below:
   - CatApplication: `janesee3/cat-application:1`
   - MeowApplication: `janesee3/meow-application:1`
-- Expose application endpoints to the internet (both applications listens on port `8080`)
-- Use the same set of Helm Charts to deploy a similar setup in your local cluster
+- Expose the API served by these applications to the internet (both applications listens on port `8080`)
 - **Tip:** If you find yourself stuck, please refer to the `suggested-solutions` folder!
-
 
 ### Steps
 
-**PRE-REQ**
+**Section 1: Spinning Up An EKS Cluster**
 
-Make a copy of the `eks` folder in your own working directory, fill in the necessary values in the `main.tf` file and create your EKS cluster using terraform.
-   - **Tip:** We will be using a two-tiered network to house the Kubernetes worker nodes of your EKS cluster. EKS cluster worker nodes should reside in at least 2 different private subnets to take advantage of the multi availability zone support!
-   - **Tip:** You can use [this website](http://www.davidc.net/sites/default/subnets/subnets.html) to help you split the VPC CIDR range
-   - Once your terraform command runs to completion successfully, configure your `kubectl` to point to the newly created cluster and check that the worker nodes are connected.
-   - **Tip:** Refer to [this article](https://itnext.io/how-does-client-authentication-work-on-amazon-eks-c4f2b90d943b#609a) to see how you can configure `kubectl` for EKS cluster
+- Make a copy of the `eks` folder in your own working directory, fill in the necessary values in the `main.tf` file and create your EKS cluster using terraform.
+  - **Tip:** We will be using a two-tiered network to house the Kubernetes worker nodes of your EKS cluster. EKS cluster worker nodes should reside in at least 2 different private subnets to take advantage of the multi availability zone support!
+  - **Tip:** You can use [this website](http://www.davidc.net/sites/default/subnets/subnets.html) to help you split the VPC CIDR range
+- AWS will take around 15mins to finish creating the cluster. While waiting, proceed to the second section below.
+- Once the cluster is successfully created, configure your `kubectl` to point to the newly created cluster and check that the worker nodes are connected.
+  - **Tip:** Refer to [this article](https://itnext.io/how-does-client-authentication-work-on-amazon-eks-c4f2b90d943b#609a) to see how you can configure `kubectl` for EKS cluster   
+
+**Section 2: Using Helm**
+
+1. Creating your first Helm Chart 
   
-While waiting for the cluster to be provisioned: 
+    As a follow up to last week's lesson, let's improve the way we manage our K8S resource YAML files by creating a Helm chart.
 
-1. We are going to improve the way we manage our K8S resource YAML files by creating a Helm chart!
-   - **Tip:** You can watch [this video](https://www.youtube.com/watch?v=9cwjtN3gkD4) to understand why we need Helm (its 12 mins long so you either skim through it or watch it another day!)
-   
-   Your task is to convert the [YAML config files](./helm/raw-files) for `CatApplication` and `MeowApplication` from last week into two separate Helm charts.
-
-   It is very important to go through the materials tagged with **IMPORTANT** above before starting! 
-
+    Your task is to templatise the [YAML config files](./helm/raw-files) for `CatApplication` and `MeowApplication` from last week's lesson into two separate Helm charts, one for `cat-application` and one for `meow-application`.
+ 
+    It is very important to go through the materials tagged with **IMPORTANT** above before starting! 
+ 
     In order to familiarise ourselves with the Go Template syntax used in Helm charts, let's create our own charts from scratch. Don't use the `helm create` command!
+ 
+    Steps:
+    - Use the [`helm/sample-application` folder](./helm/sample-application) as a starting point.
+    - Find and replace all instances of `sample-application` with your desired chart name! You can rename them to `cat-application` and start templatising the `CatApplication` Kubernetes resources first.
+    - Using your understanding of Helm and Go Template, templatise the Kubernetes resource manifests files in [`helm/raw-files`](./helm/raw-files) and place the completed templates in the `helm/sample-application/templates` folder. 
+    - When you're done, you should have 2 folders ready, each containing the Helm chart for `CatApplication` and `MeowApplication` separately.
+    - **Tip:** Watch [this video](https://www.youtube.com/watch?v=gbUBTTXuQwI&list=PLLYW3zEOaqlKYku0piyzzLFGpR9VpPvXR) to familiarise yourself with Helm and how templating works with it. 
+    - **Tip:** Refer to [this documention](https://helm.sh/docs/chart_template_guide/) for help along the way
+    - **Tip:** You can use the `helm template` command to check whether your templatised YAML resolves correctly. More information about this command and how it works [here](https://helm.sh/docs/helm/helm_template/).
 
-      - Use the [`helm/sample-application`](./helm/sample-application) folder as a starting point. (Remember to replace all instances of `sample-application` with your desired chart name!
-      - See [`helm/raw-files`](./helm/raw-files) for the YAML config files required to deploy `CatApplication` and `MeowApplication`. 
-      - **Tip:** Refer to [this documention](https://helm.sh/docs/topics/chart_template_guide/) for help along the way!
-      - **Tip:** You can use the `helm template` command to check whether your templatized YAML resolves correctly. More information about this command and how it works [here](https://v2.helm.sh/docs/helm/#helm-template).
+2. Using the Helm charts you've prepared, install `CatApplication` and `MeowApplication` as Helm releases into your cluster. 
+   - **Tip:** When installing a fresh Helm release, you can use either the `helm upgrade` or `helm install` command. However, to update an existing release, you can only use `helm upgrade`. See [here](https://helm.sh/docs/helm/) for more information about each command.
+   - You may have noticed that `readinessProbe` is configured for the Pods. This means that we no longer have to manually call the `/meow` or `/cats` endpoint ourselves to check for the Pod's health; we can just rely on the Pod's `READY` metric.
+   - **Tip**: For the `helm upgrade` command, can you find out which flag you can add to ensure that `helm` will rollback changes in the event that the upgrade was unsuccessful? (eg. Pods not starting up healthily)  
    
-2. Initialise `helm` in your EKS cluster
-   
-   In Helm 2, there is a server-side component known as `Tiller`, which is to be installed in the kubernetes cluster you're working on. However, in Helm 3, they've removed the need for a server-side component, so you do not have to bother youself much with Tiller moving forward.
+3. Yay! `CatApplication` and `MeowApplication` are now running on the cloud!
 
-   Simply follow the steps below to initialise `helm` with Tiller, and move on to the next step!
+   Now, we can continue to use the `port-forward` method from last week to hit the `/meow` endpoint, but since we're running on the cloud now, let's expose these endpoints to the internet instead.
 
-   - Download / copy the contents of the [`helm/helm-rbac.yaml`](./helm/helm-rbac.yaml) into your machine.
-   - Run `kubectl apply -f helm-rbac.yaml` to install the required K8S ServiceAccount for the Tiller component that will be running in your cluster.
-   - Run `helm init --service-account=tiller`
-   - See [here](https://devopscube.com/install-configure-helm-kubernetes/) if you want to understand more about this init process!
-
-3. Install `CatApplication` and `MeowApplication` as Helm releases into the cluster. 
-   - **Tip:** See [here](https://v2.helm.sh/docs/helm/#helm-install) for information about the `helm install` command.
-   - **Bonus**: What flags can you add to the `helm install` command to ensure that `helm` will rollback whatever resources that were created in the event that the deployment was unsuccessful? (eg. Pods not starting up healthily)  
-   - You may have noticed that the `readinessProbe` setting is configured for the Pods. This means that we no longer have to manually call the `/meow` or `/cats` endpoint ourselves to check for the Pod's health; we can just rely on the Pod's `READY` metric.
-   
-4. Yay! `CatApplication` and `MeowApplication` is now running on the cloud! Now, we could hit the `/meow` endpoint using the `port-forward` method last week, but since we're running on the cloud now, how can we expose these endpoints to the internet?
-
-   First, we need to setup a Load Balancer on AWS to receive traffic from the internet and propagate them to the K8S worker nodes accordingly. Next, we need to write routing rules so that we can provide a mapping between the URL paths and our K8S Services.
+   First, we need to set up a Load Balancer on AWS to receive traffic from the internet and propagate them to the K8S worker nodes accordingly. Next, we need to write routing rules so that we can provide a mapping between the URL paths and our K8S Services.
 
    Lucky for us, an `Ingress Controller` is what we need to achieve this! There are many Ingress Controllers out there, but for today, we will be using the NGINX Ingress Controller. See here for more information about
 
@@ -117,24 +103,24 @@ While waiting for the cluster to be provisioned:
    - **Tip:** You can use `helm get manifest <release-name>` command to check what K8S resources were created for that release.
    - How can you check what Load Balancer URL has been provisioned for you after the installation? Remember that we can provision an AWS Load Balancer for the EKS cluster by creating a K8S Service with type `LoadBalancer`.
   
-5. Next, write the routing rules that will be consumed by the Ingress Controller.
+4. Next, write the routing rules that will be consumed by the Ingress Controller.
    - **Tip:** These routing rules are actually a type of K8S resource, called `Ingress`. See [here](https://kubernetes.io/docs/concepts/services-networking/ingress/#types-of-ingress) and [here](https://www.youtube.com/watch?v=VicH6KojwCI) for more information!
-   - **Tip:** We want to create TWO separate `Ingress` resources, one each for the `CatApplication` and `MeowApplication`, so as to achieve **host-based routing** for the `/meow` and `/cats` endpoints. See [here](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/) for reference.
-   - **Tip:** Where should the `Ingress` YAML files be stored in, and how can they be applied to the cluster? See [here](https://v2.helm.sh/docs/helm/#helm-upgrade) for reference.
-   - Test that your Ingress resources are correct with `curl` or accesing the endpoint directly from the browser! 
-6. How can we deploy the `CatApplication` and `MeowApplication` in a LOCAL kubernetes cluster by reusing the same Helm charts?
-   - **Requirements for the local deployment:**
-      1. No `Ingress` resources are required, since we will not have an Ingress Controller for a local cluster
-      2. `CatApplication` will be using the image `janesee3/cat-application:local`
-   - If you haven't already, start up a local Kubernetes cluster using Docker Desktop. Remember to configure your `kubectl` to point to the local cluster afterwards!
-   - **Tip:** You will need to create a separate Helm values file (eg. `local-cluster.yaml`)
+   - **Tip:** We should be creating TWO separate `Ingress` resources, one each for the `CatApplication` and `MeowApplication`, so that we can achieve **host-based routing** for the `/meow` and `/cats` endpoints. See [here](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/) for reference.
+   - **Tip:** Remember, now that you already have an existing Helm release, you should be using the `helm upgrade` command to apply your updates!
+   - Test that your Ingress resources have been correctly configured and applied by using `curl` or accessing the endpoint directly from the browser! 
    
 
 ### Extra Activities
 
-1. How can we decouple the configurations for application environment variables from the `Deployment` YAML template, and move them to the `values.yaml` file instead?
+1. How can we deploy `CatApplication` and `MeowApplication` in a LOCAL kubernetes cluster by reusing the same Helm charts?
+   - **Requirements for the local deployment:**
+         1. No `Ingress` resources required, since we will not have an Ingress Controller for a local cluster
+         2. `CatApplication` will be using the image `janesee3/cat-application:local`
+   - If you haven't already, start up a local Kubernetes cluster using Docker Desktop. Remember to configure `kubectl` to point to the local cluster when that's done.
+   - **Tip:** You will need to create a separate Helm values file (eg. `local-cluster.yaml`)  
+2. How can we decouple the configurations for application environment variables from the `Deployment` YAML template, and move them to the `values.yaml` file instead?
    - In doing so, we can easily configure different env vars for the Helm release by switching out a different values file.
-2. Try to secure the LoadBalancer URL provisioned by the NGINX Ingress Controller with basic authentication by following this guide [here](https://kubernetes.github.io/ingress-nginx/examples/auth/basic/)
+3. Try to secure the LoadBalancer URL provisioned by the NGINX Ingress Controller with basic authentication by following this guide [here](https://kubernetes.github.io/ingress-nginx/examples/auth/basic/)
 
 
 ## What if I want to know more!?

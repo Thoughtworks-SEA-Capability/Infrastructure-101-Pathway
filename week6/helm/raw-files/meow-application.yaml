@@ -4,13 +4,12 @@ kind: Deployment
 metadata:
   name: meow-application
 spec:
-  
   # Deployment specs
   replicas: 1
   selector:
     matchLabels:
       my-label: meow-application
-  
+
   # Pod template for this deployment
   template:
     metadata:
@@ -25,13 +24,13 @@ spec:
                 value: "YES"
               - name: "CATS_URL"
                 value: "http://cat-service:8080/cats"
-            
+
             # Define the ports that this container exposes
             ports:
               - name: my-exposed-port
                 containerPort: 8080
                 protocol: TCP
-                
+
             # Define the endpoint that kublet will use to check if this pod is ready
             readinessProbe:
               httpGet:
@@ -48,8 +47,8 @@ spec:
     my-label: meow-application
   ports:
       # The port exposed for this Service
-    - port: 8080 
+    - port: 8080
       # The port exposed on the target Pods
-      # targetPort: 8080
       # You can also use the port name as defined in the Deployment/Pod Spec for this exposed port
+      # targetPort: 8080
       targetPort: my-exposed-port
